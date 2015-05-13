@@ -134,6 +134,10 @@ public class Hangman extends ConsoleProgram {
 	//updates the hiddenWord if the character entered is correct 
 	private void letterCheck() {
 		//checks to see if the guessed letter is in the word
+		if(ch > 96) 
+		{
+			ch = (char) (ch - 32);
+		}
 		if(word.indexOf(ch) == -1) {
 			println("There are no " + ch + "'s in the word");
 			guessCounter--;
